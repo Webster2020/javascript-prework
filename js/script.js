@@ -12,14 +12,17 @@ function getMoveName(argMoveId) {
 }
 
 function displayResult(argComputerMove, argPlayerMove) {
-  printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-
-  if (argPlayerMove == argComputerMove) {
-    printMessage('Remis!');
-  } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce' || argPlayerMove == 'papier' && argComputerMove == 'kamień' || argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-    printMessage('Wygrywasz rundę!');
+  if (argPlayerMove == 'nieznany ruch') {
+    printMessage('Wprowadzona liczba inna niż 1,2,3. Wprowadź poprawną liczbę!');
   } else {
-    printMessage('Komputer był lepszy!');
+    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    if (argPlayerMove == argComputerMove) {
+      printMessage('Remis!');
+    } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce' || argPlayerMove == 'papier' && argComputerMove == 'kamień' || argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+      printMessage('Wygrywasz rundę!');
+    } else {
+      printMessage('Komputer był lepszy!');
+    }
   }
 }
 
