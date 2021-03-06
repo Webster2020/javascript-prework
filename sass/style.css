@@ -13,7 +13,7 @@ body {
 .container {
   margin: 70px auto;
   padding: 10px;
-  width: 400px;
+  width: 450px;
   border: 5px solid ghostwhite;
   border-radius: 20px;
   background-color: aqua;
@@ -41,18 +41,28 @@ body {
 }
 
 .container #buttons button {
-  width: 100px;
-  height: 40px;
+  border: 0px solid black;
+  width: 120px;
+  height: 50px;
   background-color: darkslategrey;
   border: 2px solid darkslategrey;
   border-radius: 10px;
+  font-size: 16px;
   color: aqua;
+  padding-bottom: 4px;
   transition: all 1s;
 }
 
 .container #buttons button:hover {
   color: ghostwhite;
   background-color: black;
+}
+
+.container #buttons button i {
+  border: 0px solid black;
+  margin-left: 5px;
+  padding-top: 2px;
+  font-size: 20px;
 }
 
 .container #buttons #play-again {

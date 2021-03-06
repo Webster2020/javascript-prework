@@ -38,7 +38,7 @@ body {
 .container {
   margin: 70px auto;
   padding: 10px;
-  width: 400px;
+  width: 450px;
   border: $border-con;
   border-radius: 20px;
   background-color: $color-three;
@@ -59,16 +59,25 @@ body {
     margin: $margin-main;
     padding: $padding-main;
     button {
-      width: 100px;
-      height: 40px;
+      border: $border-cont-inn-ins-elem-this-help;
+      width: 120px;
+      height: 50px;
       background-color: $color-four;
       border: 2px solid $color-four;
       border-radius: 10px;
+      font-size: 16px;
       color: $color-three;
+      padding-bottom: 4px;
       transition: $transition;
       &:hover {
         color: $color-one;
         background-color: $color-two;
+      }
+      i {
+        border: $border-cont-inn-ins-elem-this-help;
+        margin-left: 5px;
+        padding-top: 2px;
+        font-size: 20px;
       } 
     }
     #play-again {
