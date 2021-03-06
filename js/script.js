@@ -18,7 +18,7 @@ function playGame(playerChoice) {
       return 'nieznany ruch';
     }
   }
-  //computer move and display result of single round
+  //computer move and display results of single round
   function displayResult(argComputerMove, argPlayerMove) {
     if (argPlayerMove == 'nieznany ruch') {
       printMessage('Wprowadzona liczba inna niż 1,2,3. Wprowadź poprawną liczbę!', 'messages');
@@ -61,6 +61,17 @@ function playGame(playerChoice) {
 
 }
 
+function playAgain() {
+  resultPlayer = 0;
+  resultComputer = 0;
+
+  clearMessages('resultPlayer');
+  clearMessages('resultComputer');
+
+  printMessage(resultPlayer, 'resultPlayer');
+  printMessage(resultComputer, 'resultComputer');
+}
+
 document.getElementById('play-rock').addEventListener('click', function () {
   playGame(1);
 });
@@ -69,4 +80,8 @@ document.getElementById('play-paper').addEventListener('click', function () {
 });
 document.getElementById('play-scissors').addEventListener('click', function () {
   playGame(3);
+});
+
+document.getElementById('play-again').addEventListener('click', function () {
+  playAgain();
 });

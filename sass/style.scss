@@ -1,8 +1,107 @@
-button {
-  width: 100px;
-  height: 40px;
-  background-color: aqua;
-  border: 2px solid darkblue;
-  border-radius: 10px;
-  color:darkblue; 
+/* GLOBAL */
+
+$color-one: ghostwhite;
+$color-two: black;
+$color-three :aqua; 
+$color-four: darkslategrey; 
+
+$font-text: 'Cairo', sans-serif;
+$font-header: 'Reggae One', cursive;
+
+$border-width: 2px;
+
+$border-con: $border-width solid $color-one;
+
+$border-sec: $border-width solid yellow;
+$border-cont: $border-width dashed red;
+$border-cont-inn: $border-width dotted blue;
+$border-cont-inn-ins: $border-width dotted brown;
+$border-cont-inn-ins-elem: $border-width dotted sliver;
+$border-cont-inn-ins-elem-this: $border-width dotted orange;
+$border-cont-inn-ins-elem-this-help: $border-width solid black;
+
+$margin-main: 10px 0;
+$padding-main: 10px 0;
+
+$transition: all 1s;
+
+*, *::before, *::after {
+	box-sizing: border-box;
 }
+
+body {
+  font-family: $font-header;
+  text-align: center;
+  background-color: $color-four;
+  color: $color-four; 
+}
+.container {
+  margin: 50px auto;
+  padding: 10px;
+  width: 400px;
+  border: $border-con;
+  border-radius: 20px;
+  background-color: $color-three;
+  .game-header {
+    border: $border-cont-inn;
+    margin: 0;
+    .game-title {
+      border: $border-cont-inn-ins;
+      margin: $margin-main;
+    }
+    .game-describtion {
+      border: $border-cont-inn-ins;
+      margin: $margin-main;
+    }
+  }
+  #buttons {
+    border: $border-cont-inn;
+    margin: $margin-main;
+    padding: $padding-main;
+    button {
+      width: 100px;
+      height: 40px;
+      background-color: $color-four;
+      border: 2px solid $color-four;
+      border-radius: 10px;
+      color: $color-three;
+      transition: $transition;
+      &:hover {
+        color: $color-one;
+        background-color: $color-two;
+      } 
+    }
+    #play-again {
+      width: 200px;
+    }
+  }
+  #messages {
+    border: $border-cont-inn;
+    margin: $margin-main;
+    padding: $padding-main;
+  }
+  .game-stats {
+    border: $border-cont-inn;
+    margin: $margin-main;
+    padding: $padding-main;
+    .player, .draw, .computer, #resultPlayer, #resultComputer {
+      border: 2px solid $color-two;
+      border-radius: 3px;
+      background-color: $color-one;
+      display: inline-block;
+      color: $color-two;
+    }
+    .player, .computer {
+      width: 100px;
+    }
+    .draw {
+      width: 30px;
+    }
+    #resultPlayer, #resultComputer {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+

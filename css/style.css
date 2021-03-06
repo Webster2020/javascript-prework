@@ -1,9 +1,94 @@
-button {
+/* GLOBAL */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Reggae One", cursive;
+  text-align: center;
+  background-color: darkslategrey;
+  color: darkslategrey;
+}
+
+.container {
+  margin: 50px auto;
+  padding: 10px;
+  width: 400px;
+  border: 2px solid ghostwhite;
+  border-radius: 20px;
+  background-color: aqua;
+}
+
+.container .game-header {
+  border: 2px dotted blue;
+  margin: 0;
+}
+
+.container .game-header .game-title {
+  border: 2px dotted brown;
+  margin: 10px 0;
+}
+
+.container .game-header .game-describtion {
+  border: 2px dotted brown;
+  margin: 10px 0;
+}
+
+.container #buttons {
+  border: 2px dotted blue;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.container #buttons button {
   width: 100px;
   height: 40px;
-  background-color: aqua;
-  border: 2px solid darkblue;
+  background-color: darkslategrey;
+  border: 2px solid darkslategrey;
   border-radius: 10px;
-  color: darkblue;
+  color: aqua;
+  transition: all 1s;
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7RUFDWixZQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLDBCQUEwQjtFQUMxQixtQkFBbUI7RUFDbkIsZUFBYztBQ0NoQiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
+
+.container #buttons button:hover {
+  color: ghostwhite;
+  background-color: black;
+}
+
+.container #buttons #play-again {
+  width: 200px;
+}
+
+.container #messages {
+  border: 2px dotted blue;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.container .game-stats {
+  border: 2px dotted blue;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.container .game-stats .player, .container .game-stats .draw, .container .game-stats .computer, .container .game-stats #resultPlayer, .container .game-stats #resultComputer {
+  border: 2px solid black;
+  border-radius: 3px;
+  background-color: ghostwhite;
+  display: inline-block;
+  color: black;
+}
+
+.container .game-stats .player, .container .game-stats .computer {
+  width: 100px;
+}
+
+.container .game-stats .draw {
+  width: 30px;
+}
+
+.container .game-stats #resultPlayer, .container .game-stats #resultComputer {
+  width: 25px;
+  height: 25px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxXQUFBO0FBMkJBO0VBQ0Msc0JBQXNCO0FDekJ2Qjs7QUQ0QkE7RUFDRSxrQ0F4QmlDO0VBeUJqQyxrQkFBa0I7RUFDbEIsK0JBN0J3QjtFQThCeEIsb0JBOUJ3QjtBQ0sxQjs7QUQyQkE7RUFDRSxpQkFBaUI7RUFDakIsYUFBYTtFQUNiLFlBQVk7RUFDWiw0QkF2Q29CO0VBd0NwQixtQkFBbUI7RUFDbkIsc0JBdkNnQjtBQ2VsQjs7QURrQkE7RUFRSSx1QkE3QnVDO0VBOEJ2QyxTQUFTO0FDdEJiOztBRGFBO0VBV00sd0JBL0IwQztFQWdDMUMsY0EzQmM7QUNPcEI7O0FEUUE7RUFlTSx3QkFuQzBDO0VBb0MxQyxjQS9CYztBQ1lwQjs7QURHQTtFQW9CSSx1QkF6Q3VDO0VBMEN2QyxjQXBDZ0I7RUFxQ2hCLGVBcENpQjtBQ2lCckI7O0FESEE7RUF3Qk0sWUFBWTtFQUNaLFlBQVk7RUFDWiwrQkExRG9CO0VBMkRwQiwrQkEzRG9CO0VBNERwQixtQkFBbUI7RUFDbkIsV0E5RFk7RUErRFosa0JBMUNhO0FDeUJuQjs7QURiQTtFQWdDUSxpQkFuRWM7RUFvRWQsdUJBbkVTO0FDb0RqQjs7QURsQkE7RUFxQ00sWUFBWTtBQ2ZsQjs7QUR0QkE7RUF5Q0ksdUJBOUR1QztFQStEdkMsY0F6RGdCO0VBMERoQixlQXpEaUI7QUMwQ3JCOztBRDVCQTtFQThDSSx1QkFuRXVDO0VBb0V2QyxjQTlEZ0I7RUErRGhCLGVBOURpQjtBQ2dEckI7O0FEbENBO0VBa0RNLHVCQXBGVztFQXFGWCxrQkFBa0I7RUFDbEIsNEJBdkZnQjtFQXdGaEIscUJBQXFCO0VBQ3JCLFlBeEZXO0FDNEVqQjs7QUQxQ0E7RUF5RE0sWUFBWTtBQ1hsQjs7QUQ5Q0E7RUE0RE0sV0FBVztBQ1ZqQjs7QURsREE7RUErRE0sV0FBVztFQUNYLFlBQVk7QUNUbEIiLCJmaWxlIjoic3R5bGUuY3NzIn0= */
