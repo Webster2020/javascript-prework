@@ -1,6 +1,10 @@
+let winner = '';
+let resultPlayer = 0;
+let resultComputer = 0;
+
 function playGame(playerChoice) {
   //clear messages
-  clearMessages();
+  clearMessages('messages');
   //player move
   function getMoveName(argMoveId) {
     if (argMoveId == 1) {
@@ -10,30 +14,51 @@ function playGame(playerChoice) {
     } else if (argMoveId == 3) {
       return 'nożyce';
     } else {
-      printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+      printMessage('Nie znam ruchu o id ' + argMoveId + '.', 'messages');
       return 'nieznany ruch';
     }
   }
-  //computer move
+  //computer move and display result of single round
   function displayResult(argComputerMove, argPlayerMove) {
     if (argPlayerMove == 'nieznany ruch') {
-      printMessage('Wprowadzona liczba inna niż 1,2,3. Wprowadź poprawną liczbę!');
+      printMessage('Wprowadzona liczba inna niż 1,2,3. Wprowadź poprawną liczbę!', 'messages');
     } else {
-      printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+      printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove, 'messages');
       if (argPlayerMove == argComputerMove) {
-        printMessage('Remis!');
+        printMessage('Remis!', 'messages');
+        winner = 'Draw';
       } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce' || argPlayerMove == 'papier' && argComputerMove == 'kamień' || argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-        printMessage('Wygrywasz rundę!');
+        printMessage('Wygrywasz rundę!', 'messages');
+        winner = 'Player';
       } else {
-        printMessage('Komputer był lepszy!');
+        printMessage('Komputer był lepszy!', 'messages');
+        winner = 'Computer';
       }
     }
   }
+  //display result of all games
+  function displayRoundResult(roundWinner) {
+    if (roundWinner == 'Player') {
+      resultPlayer++;
+    } else if (roundWinner == 'Computer') {
+      resultComputer++;
+    } else {
+      console.log('Draw!');
+    }
+    clearMessages('resultPlayer');
+    clearMessages('resultComputer');
+
+    printMessage(resultPlayer, 'resultPlayer');
+    printMessage(resultComputer, 'resultComputer');
+  }
+
   let computerMove = getMoveName(Math.floor(Math.random() * 3 + 1));
-  //let playerMove = getMoveName(prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.'));
   let playerMove = getMoveName(playerChoice);
 
   displayResult(computerMove, playerMove);
+
+  displayRoundResult(winner);
+
 }
 
 document.getElementById('play-rock').addEventListener('click', function () {
