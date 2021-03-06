@@ -8,9 +8,9 @@ $color-four: darkslategrey;
 $font-text: 'Cairo', sans-serif;
 $font-header: 'Reggae One', cursive;
 
-$border-width: 2px;
+$border-width: 0px;
 
-$border-con: $border-width solid $color-one;
+$border-con: 5px solid $color-one;
 
 $border-sec: $border-width solid yellow;
 $border-cont: $border-width dashed red;
@@ -36,7 +36,7 @@ body {
   color: $color-four; 
 }
 .container {
-  margin: 50px auto;
+  margin: 70px auto;
   padding: 10px;
   width: 400px;
   border: $border-con;
@@ -86,7 +86,7 @@ body {
     padding: $padding-main;
     .player, .draw, .computer, #resultPlayer, #resultComputer {
       border: 2px solid $color-two;
-      border-radius: 3px;
+      border-radius: 4px;
       background-color: $color-one;
       display: inline-block;
       color: $color-two;
@@ -99,7 +99,7 @@ body {
     }
     #resultPlayer, #resultComputer {
       width: 25px;
-      height: 25px;
+      height: 26px;
     }
   }
 }
